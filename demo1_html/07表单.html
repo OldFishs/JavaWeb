@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        form 表单标签
+            action 定义数据的提交地址
+                1 url
+                2 相对路径
+                3 绝对路径
+
+            method 定义数据的提交方式
+                GET
+                    1 参数 以键值对形式放在url后提交   url?key=value&key=value
+                    2 数据直接暴露地址栏 不安全
+                    3 地址栏长度有限
+                    4 地址栏只能字符 无法提交文件
+                    5 效率比post高
+                POST
+                    1 参数默认不放在url后
+                    2 不显示在地址栏 相对安全
+                    3 数据单独打包 通过请求体发送
+                    4 请求体中可以字符 字节
+                    5 相比于 get 效率低
+
+
+        表单项标签
+        一定要定义name属性，用于明确提交时的参数名
+        还需明确value属性，用于明确提交时的实参
+        input
+            type 输入信息的表单项类型
+                text 普通文本框
+                password 密码框
+                submit 提交按钮
+                reset 重置
+                radio 单选框 多个单选框使用相同name有互斥效果
+                checkbox 复选框
+                hidden 隐藏语 不显示界面 提交时携带\
+                (希望用户提交特定信息，但不希望该数据改变)
+                readonly 只读 提交时携带
+                disabled 只读 提交时不携带 
+                file 文件上传框
+        
+        textarea 文本域 多行文本框
+        select 下拉框
+            option
+    -->
+
+    <form action="08welcome.html" method="get">
+        <!-- 添加表单项标签（用户输入信息的标签 -->
+         <input type="hidden" name="id" value="123">
+         <input type="text" name="pid" value="456" readonly>
+         <br>
+         <input type="text" name="tid" value="789" disabled>
+         <br>
+
+         用户名：<input type="text" name="username" value="请输入姓名：">
+         <br>
+         密码：<input type="password" name="userpwd">
+         <br>
+         性别：
+         <input type="radio" name="gender" value="1" checked="true">男
+         <input type="radio" name="gender" value="0">女
+         <br>
+         爱好：
+         <input type="checkbox" name="hobby" value="0">篮球
+         <input type="checkbox" name="hobby" value="1">足球
+         <input type="checkbox" name="hobby" value="2">羽毛球
+         <input type="checkbox" name="hobby" value="3">乒乓球
+         <br>
+         个人简介：
+         <textarea name="intro" style="width: 300px;height: 100px;"></textarea>
+         <br>
+         籍贯：
+         <select name="" id="">
+            <option value="0">京</option>
+            <option value="1">海</option>
+            <option value="2">津</option>
+            <option value="3" selected="selected">---请选择---</option>
+         </select>
+         <br>
+         头像：
+         <input type="file">
+
+         <input type="submit" value="登录">
+         <input type="reset" value="清空">
+    </form>
+</body>
+</html>
