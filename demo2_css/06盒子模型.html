@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            padding 内边距
+            margin 外边距
+        
+        
+        */
+        .outerDiv{
+            width: 500px;
+            height: 300px;
+            border: 1px solid green;
+            background-color: yellowgreen;
+            margin: 0px auto;
+        }
+
+        .innerDiv{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            float: left;        
+        }
+
+        .d1{
+            background-color: burlywood;  
+            /* margin-right: 10px;   
+            margin-top: 10px;
+            margin-left: 10px;
+            padding-top: 10px;   */
+            margin: 10px 20px;
+        }
+        .d2{
+            background-color: aquamarine;   
+            margin-left: 10px;
+        }
+        .d3{
+            background-color: coral;   
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="outerDiv">
+        <div class="innerDiv d1">diva</div>
+        <div class="innerDiv d2">divb</div>
+        <div class="innerDiv d3">divc</div>
+    </div>
+</body>
+</html>
