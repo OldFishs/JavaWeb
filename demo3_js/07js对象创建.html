@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // java 类 》 实例化 》 对象
+        // 创建对象的语法
+        // 方式一   new Object()
+
+        // 方式二 {属性名：属性值，，，函数名：function(){}}
+
+        var person = new Object;
+        //没有则添加并赋值
+        person.name = "张安"
+        person.age = 10;
+        person.eat = function(food){
+            console.log(this.age + "岁的" + this.name + "在吃" + food )
+        }
+
+        person.eat("牛奶")
+
+        var person = {
+            name:"Tommm",
+            age:17,
+            eat:function(food){
+            console.log(this.age + "岁的" + this.name + "在吃" + food )
+        }
+
+        }
+
+        person.eat("火锅")
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

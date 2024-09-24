@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //JSON语法
+        //var personStr = '{"属性名":"属性值","属性名"：{},"属性名": ["","",""],"属性名":[{},{}]}'
+        // 属性值 字符串必须用""包裹，数字可以不处理
+        // “为什么没方法”
+        //前后端交互主要数据 数据通过属性携带
+
+        //前端转换：
+        //以下为JSON格式字符串
+        var personStr = '{"name":"tommm","age":"14","dog":{"dname":"jack"},"hobby":["swimming","foodball"],"friends":[{"fname":"mark"},{"fname":"rark"},{"fname":"morty"}]}'
+
+        //未转化：
+        console.log(personStr)
+        console.log(typeof personStr)
+        console.log(personStr.name)
+        //通过JSON.parse()可以将json串转化为对象
+        //已转换：
+        var personStr = JSON.parse(personStr)
+        console.log(personStr)
+        console.log(typeof personStr)
+        console.log(personStr.name)
+        console.log(personStr.hobby[0])
+        console.log(personStr.friends[0].fname)
+
+        
+        //通过JSON.stringify()将一个对象转换为JSON串
+        var personStr2 = JSON.stringify(personStr)
+        document.write(personStr2)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

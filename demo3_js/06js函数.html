@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 函数声明的语法
+            // 1 function 函数名(){}
+            // 2 var 函数名=function{}
+        
+        //与java区别
+            // 1 没有访问修饰符
+            // 2 没有返回值类型也没有void 如果有值返回直接return即可
+            // 3 没有异常列表 
+            // 4 调用方法时，形参与实参数量可以不一致，在方法内部可以通过arguments获得调用的实参
+            // 5 函数也可以作为参数传递给另一方(跟java不一样！)
+
+        function sum1(a, b){
+            return a+b;
+        }
+
+        var sum2 = function(a, b){
+            console.log(arguments)
+            return a+b;
+        }
+
+        var result = sum1(10,20);
+        console.log(result)
+        var result = sum2(10,20);
+        console.log(result)
+        var result = sum2(10,20,30,40,50);
+        var result = sum2(10);
+        console.log(result)
+        function add(getsum){
+            return getsum(20,90)
+        }
+        var result = add(sum1);
+        console.log(result)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
