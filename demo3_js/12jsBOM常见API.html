@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <Script>
+        /*
+        window 对象由浏览器提供 无需new
+            window.可以省略不写
+            三种弹窗方式
+                1 alert
+                2 prompt
+                3 comfirm
+
+            定时任务
+
+        history 窗口的访问历史
+
+
+        */
+
+        function fun1(){
+            window.alert("hello")
+        }
+
+        function fun2(){
+            var res = window.prompt("请输入姓名")
+            console.log(res)
+        }
+
+        function fun3(){
+            var res = window.confirm("确定要删除吗？")
+            console.log(res)
+        }
+
+        function fun4(){
+            var res = window.setTimeout(function(){
+                console.log("hello  ")
+            },2000)
+            console.log(res)
+        }
+
+        function funa(){
+            //向前一页：a-b 返回a
+            history.back()
+        }
+
+        function funb(){
+            //向后一页： a-b-a  返回b
+            history.forward()
+            // history.go(1)
+        }
+    </Script>
+</head>
+<body>
+    <button onclick="funa()">上一页</button>
+    <button onclick="funb()">下一页</button>
+    <br>
+    <a href="https://youdao.com/">wyyd</a>
+    <hr>
+    <button onclick="fun1()">信息提示框</button>
+    <button onclick="fun2()">信息输入框</button>
+    <button onclick="fun3()">信息确认框</button>
+    <button onclick="fun4()">两秒后打印hello</button>
+</body>
+</html>
