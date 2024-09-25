@@ -17,7 +17,10 @@
             定时任务
 
         history 窗口的访问历史
-
+        location
+        sessionStorage  用于存储会话级数据（浏览器关闭数据清除
+        localStorage    用于存储持久级数据（浏览器关闭数据还在
+        console log
 
         */
 
@@ -52,9 +55,41 @@
             history.forward()
             // history.go(1)
         }
+
+        function funw(){
+            location.href="https://youdao.com/"
+        }
+
+        function fund(){
+            // 像sessionStorage中存储
+            sessionStorage.setItem("aaa","valuea")  
+            // 像localStorage中存储
+            localStorage.setItem("bbb","valueb")  
+
+        }
+
+        function fune(){
+            console.log(sessionStorage.getItem("aaa"))
+            console.log(localStorage.getItem("bbb"))
+        }
+
+        function funf(){
+            sessionStorage.removeItem("aaa")
+            localStorage.removeItem("bbb")
+            
+        }
     </Script>
 </head>
 <body>
+
+    <button onclick="fund()">存储</button>
+    <button onclick="fune()">读取</button>
+    <button onclick="funf()">清空</button>
+    <hr>
+
+    <button onclick="funw()">网易有道</button>
+
+    <hr>
     <button onclick="funa()">上一页</button>
     <button onclick="funb()">下一页</button>
     <br>
