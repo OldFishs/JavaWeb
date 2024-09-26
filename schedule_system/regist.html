@@ -42,7 +42,7 @@
             text-align: center;
         }
 
-        #unmsg , #upmsg {
+        #unmsg,#upmsg1,#upmsg2 {
                 color: rgb(230, 87, 51);
             }
         
@@ -67,22 +67,26 @@
             var userpasswordReg= /^[a-zA-Z0-9]{6,10}$/
              var userpassword = document.getElementById("userpassword")
              var up = userpassword.value
-             var upmsg=document.getElementById("upmsg")
+             var upmsg1=document.getElementById("upmsg1")
              if(!userpasswordReg.test(up)){ 
-                upmsg.innerText="密码格式有误"
+                upmsg1.innerText="密码格式有误"
                 return false
             }
-            upmsg.innerText="密码格式正确"
+            upmsg1.innerText="密码格式正确"
             return true
         }
 
         function matchpassword(){
+            var password = document.getElementById("userpassword")
+            var pw = password.value
             var againpassword = document.getElementById("userpasswordagain")
+            var apw = againpassword.value
             var upmsg2=document.getElementById("upmsg2")
-            if(!againpassword.test(up)){ 
+            if(apw != pw){ 
                 upmsg2.innerText="密码不一致"
                 return false
             }
+            upmsg2.innerText="密码一致"
             return true
         }
 
@@ -111,7 +115,7 @@
                 <tr class="td1">
                     <td class="td4">请输入密码：</td>
                     <td><input id="userpassword" type="password" class="td2" onblur="checkpassword()">
-                        <span id = "upmsg"></span>
+                        <span id = "upmsg1"></span>
                     </td>
                     
                 </tr>
