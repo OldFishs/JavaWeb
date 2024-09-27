@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+    <style>
+        .h1{
+            text-align: center;
+            color: cadetblue;
+            font-family: 幼圆;
+        }
+
+        .f1{
+            margin: 0px auto;
+            width: 500px;
+            border-radius: 5px;
+            color: black;
+            font-family: 幼圆;
+            border: 5px solid cadetblue;    
+        }
+
+        .td1 td{
+            border: 1px solid rgb(133, 202, 204);
+
+        }
+
+        .td2{
+            border: 0px;
+            width: 50%;
+            
+        }
+
+        .td3{
+            border: 2px solid cadetblue;
+            border-radius: 4px;
+            width: 60px;
+            background-color: wheat;
+            text-align: center;
+        }
+
+        .td4{
+            text-align: center;
+        }
+
+        #unmsg , #upmsg {
+                color: rgb(230, 87, 51);
+            }
+        
+        
+
+    </style>
+    <script>
+        function checkname(){
+             var usernameReg= /^[a-zA-Z0-9]{6,10}$/
+             var username = document.getElementById("username")
+             var un = username.value
+             var unmsg=document.getElementById("unmsg")
+             if(!usernameReg.test(un)){ 
+                unmsg.innerText="用户名格式有误"
+                return false
+            }
+            unmsg.innerText="用户格式正确"
+            return true
+        }
+
+        function checkpassword(){
+            var userpasswordReg= /^[a-zA-Z0-9]{6,10}$/
+             var userpassword = document.getElementById("userpassword")
+             var up = userpassword.value
+             var upmsg=document.getElementById("upmsg")
+             if(!userpasswordReg.test(up)){ 
+                upmsg.innerText="密码格式有误"
+                return false
+            }
+            upmsg.innerText="密码格式正确"
+            return true
+        }
+
+        function checkForm(){
+            var a=checkname();
+            var b=checkpassword();
+            return a&&b
+        }
+    </script>
+    <link rel="stylesheet" href="static/css/btn.css">
+    <script src="static/js/btn.js"></script>
+
+</head>
+<body>
+    <img src ="static/img/1.png">
+
+    <h1 class="h1">欢迎使用日志登录系统</h1>
+    <h3 class="h1">请登录</h3>
+    <form action="https://www.bilibili.com/?spm_id_from=333.788.0.0" onsubmit="return checkForm()">
+        <table class="f1" cellspacing="0px">
+            <tbody>
+                <tr class="td1">
+                    <td class="td4">请输入账号：</td>
+                    <td><input id="username" type="text" class="td2" onblur="checkname()">
+                        <span id = "unmsg"></span>
+                    </td>
+                    
+                </tr>
+                <tr class="td1">
+                    <td class="td4">请输入密码：</td>
+                    <td><input id="userpassword" type="text" class="td2" onblur="checkpassword()">
+                        <span id = "upmsg"></span>
+                    </td>
+                    
+                </tr>
+                <tr class="td1 td4">
+                    <td colspan="2"class="td1">
+                        <input type="submit" class="td3" value="登录">
+                        <input type="reset"class="td3"value="重置">
+                        <button class="td3"><a href="regist.html">注册</a></button>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
