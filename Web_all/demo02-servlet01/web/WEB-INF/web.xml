@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+<!--
+    1 配置一个servlet类 并起一个别名
+        servlet-class   告诉Tocat对应的要实例化的Servlet类
+        servlet-name    用于关联请求的映射路径
+-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>userServlet</servlet-name>-->
+<!--        <servlet-class>com.xxx.servlet.UserServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>userServlet</servlet-name>-->
+<!--        <url-pattern>/userServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    用@WebServlet("/s1")代替，二者有冲突    -->
+
+
+
+
+<!--
+    一个servlet-name可以同时对应url-patten
+    一个servlet标签可以对应多个servlet-mapping标签
+
+    url-patten
+        1 精确匹配
+            /servlet
+        2 模糊匹配
+            *作为通配符，*在哪里，哪里就是模糊的
+            /       匹配全部，不包含jsp文件
+            /*      匹配全部，包含jsp文件
+            /a/*    匹配前缀，后缀模糊
+            *.action匹配后缀，前缀模糊
+
+-->
+
+    <servlet>
+        <servlet-name>servlet</servlet-name>
+        <servlet-class>com.xxx.servlet.servlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+<!--        精确匹配-->
+<!--        <url-pattern>/</url-pattern>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--        <url-pattern>/a/*</url-pattern>-->
+        <url-pattern>*.action</url-pattern>
+        <url-pattern>/xx1</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+        <url-pattern>/s</url-pattern>
+        <url-pattern>/xx</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>servletlifecycle</servlet-name>
+        <servlet-class>com.xxx.servlet.servletlifecycle</servlet-class>
+<!--        默认值-1，含义是tomcat启动时不会实例化servlet
+            其他正整数 15    含义是tomcat启动时实例化servlet的顺序
+                相同时tomcat会自动协调
+
+-->
+        <load-on-startup>6</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servletlifecycle</servlet-name>
+        <url-pattern>/servletlifecycle</url-pattern>
+    </servlet-mapping>
+</web-app>
