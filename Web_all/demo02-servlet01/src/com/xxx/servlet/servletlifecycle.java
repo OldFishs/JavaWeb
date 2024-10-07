@@ -41,7 +41,15 @@ import java.io.IOException;
 
     2 抽象类
     public abstract class GenericServlet implements Servlet{
-    
+    ...
+
+    3 源码解析
+        1）部分推荐在servlet中重写do***方法处理请求，
+        2）直接重写service也没有问题
+        3）后续使用SpringMVC框架后，无需继承HttpServlet，处理请求的方法也无需是do***
+        4）如果doGet和doPost中定义方法一样，可以让一个方法直接调用另一个方法
+        掌握技能
+            继承Httservlet，要么重写service，要么重写doGet/doPost（两者都重写servlet优先
 
  */
 
